@@ -21,7 +21,7 @@
     <td  ng-repeat="w in weathers.list">
       <table class="table">
         <tr>
-          <td>{{w.dt | date}}</td>
+          <td>{{w.dt * 1000 | date}}</td>
         </tr>
         <tr>
           <td><img ng-src="http://openweathermap.org/img/w/{{w.weather[0].icon}}.png" ></td>
@@ -30,7 +30,7 @@
           <td>{{w.weather[0].description}}</td>
         </tr>
         <tr>
-          <td>{{w.temp.min}} ~ {{w.temp.max}} </td>
+          <td>{{w.temp.min}} ~ {{w.temp.max}} {{unitFlag}} </td>
         </tr>
       </table>
     </td>
