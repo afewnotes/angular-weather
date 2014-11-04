@@ -1,0 +1,38 @@
+
+<table class="table  table-bordered" ng-show="weatherDetail && weatherDetail.cod === 200">
+	<tr>
+		<td>Country</td>
+		<td>{{weatherDetail.sys.country}}</td>
+	</tr>
+	<tr>
+		<td>City</td>
+		<td>{{weatherDetail.name}}</td>
+	</tr>
+	<tr>
+		<td>Main</td>
+		<td>
+			<span ng-repeat="w in weatherDetail.weather">
+			{{w.main}} <br>
+			{{w.description}}
+			</span>
+			<br>
+		</td>
+	</tr>
+	<tr>
+		<td>Weather</td>
+		<td>
+			temp: {{ weatherDetail.main.temp }} <br>
+			humidity: {{ weatherDetail.main.humidity }} <br>
+			pressure: {{ weatherDetail.main.pressure }} <br>
+			min-temp: {{ weatherDetail.main.temp_min}} <br>
+			max-temp: {{ weatherDetail.main.temp_max}}
+		</td>
+	</tr>
+	<tr>
+		<td>Wind</td>
+		<td>
+			speed: {{weatherDetail.wind.speed}} <br>
+			deg: {{weatherDetail.wind.deg}}
+		</td>
+	</tr>
+</table>

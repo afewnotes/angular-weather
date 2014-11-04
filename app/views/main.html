@@ -1,23 +1,38 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+<nav class="navbar navbar-default" role="navigation"  >
+  <form class="navbar-form navbar-left" role="form" novalidate>
+    <label>{{title}}</label>
+    <input type="text" ng-model="city" class="form-control" placeholder="Please input city">
+    <button class="btn btn-primary btn-sm" type="submit" ng-click="searchWeather()">
+    <span class="glyphicon glyphicon-search"></span>
+    Search
+    </button>
+  </form>
+</nav>
+<table class="table" ng-show="weathers && weathers.cod === '200'">
+  <tr>
+    <td>Country</td>
+    <td>{{weathers.city.country}}</td>
+  </tr>
+  <tr>
+    <td>City</td>
+    <td>{{weathers.city.name}}</td>
+  </tr>
+  <tr>
+    <td  ng-repeat="w in weathers.list">
+      <table class="table">
+        <tr>
+          <td>{{w.dt | date}}</td>
+        </tr>
+        <tr>
+          <td><img ng-src="http://openweathermap.org/img/w/{{w.weather[0].icon}}.png" ></td>
+        </tr>
+        <tr>
+          <td>{{w.weather[0].description}}</td>
+        </tr>
+        <tr>
+          <td>{{w.temp.min}} ~ {{w.temp.max}} </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
