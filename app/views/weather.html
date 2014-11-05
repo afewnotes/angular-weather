@@ -1,5 +1,5 @@
 
-<table class="table  table-bordered" ng-show="weatherDetail && weatherDetail.cod === 200">
+<table class="table  table-bordered" ng-show="needShow()">
 	<tr>
 		<td>Country</td>
 		<td>{{weatherDetail.sys.country}}</td>

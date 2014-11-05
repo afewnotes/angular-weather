@@ -8,7 +8,7 @@
     </button>
   </form>
 </nav>
-<table class="table" ng-show="weathers && weathers.cod === '200'">
+<table class="table" ng-show="needShow()">
   <tr>
     <td>Country</td>
     <td>{{weathers.city.country}}</td>

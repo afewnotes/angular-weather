@@ -20,4 +20,8 @@ angular.module('angularWeatherApp')
           $scope.weathers = result;
         });
     };
+
+    $scope.needShow = function() {
+      return $scope.weathers && $scope.weathers.cod === '200';
+    };
   });
