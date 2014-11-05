@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: Detail', function () {
+describe('Service: details', function () {
 
   // load the service's module
   beforeEach(module('angularWeatherApp'));
 
   // instantiate service
-  var Detail;
-  beforeEach(inject(function (_Detail_) {
-    Detail = _Detail_;
+  var details;
+  beforeEach(inject(function (_details_) {
+    details = _details_;
   }));
 
   it('should do something', function () {
-    expect(!!Detail).toBe(true);
+    expect(!!details).toBe(true);
   });
 
 });
