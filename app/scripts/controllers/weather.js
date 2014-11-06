@@ -8,16 +8,13 @@
  * Controller of the angularWeatherApp
  */
 angular.module('angularWeatherApp')
-  .controller('WeatherCtrl', function($scope, $http) {
+  .controller('WeatherCtrl', function($scope, details) {
 
     $scope.detail = function() {
-      var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + $scope.city + "&callback=JSON_CALLBACK";
-      $http
-        .jsonp(apiUrl)
-        .success(function(result) {
-          $scope.weatherDetail = result;
-        });
-    };
+      details.day($scope.city).success(function(data) {
+        $scope.weatherDetail = data;
+      });
+    }
 
     $scope.needShow = function() {
       return weatherDetail && weatherDetail.cod === 200;
