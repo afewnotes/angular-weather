@@ -1,7 +1,18 @@
 <nav class="navbar navbar-default" role="navigation"  >
   <form class="navbar-form navbar-left" role="form" novalidate>
-    <label>{{title}}</label>
-    <input type="text" ng-model="city" class="form-control" placeholder="Please input city">
+    <!-- <label>{{title}}</label> -->
+    <label for="lang">Language</label>
+    <select ng-model="search.lang" id="lang" class="form-control" >
+      <option value="zh_cn" selected>Chinese</option>
+      <option value="en_us">English</option>
+    </select>
+    <label for="units">Units</label>
+    <select ng-model="search.units" id="units" class="form-control" >
+      <option value="metric" selected>Metric</option>
+      <option value="imperial">Imperial</option>
+    </select>
+    <label for="city">City</label>
+    <input type="text" id="city" ng-model="search.city" class="form-control" placeholder="Please input city">
     <button class="btn btn-primary btn-sm" type="submit" ng-click="searchWeather()">
     <span class="glyphicon glyphicon-search"></span>
     Search
@@ -21,7 +32,7 @@
     <td  ng-repeat="w in weathers.list">
       <table class="table">
         <tr>
-          <td>{{w.dt * 1000 | date}}</td>
+          <td>{{w.dt * 1000 | date : 'MM-dd'}}</td>
         </tr>
         <tr>
           <td><img ng-src="http://openweathermap.org/img/w/{{w.weather[0].icon}}.png" ></td>

@@ -9,12 +9,12 @@
  */
 angular.module('angularWeatherApp')
   .controller('MainCtrl', function($scope, details) {
-    $scope.title = "Weather";
-    $scope.unitFlag = "C"
+    // $scope.title = "Weather";
 
     $scope.searchWeather = function() {
-      details.week($scope.city).success(function(data) {
+      details.week($scope.search).success(function(data) {
         $scope.weathers = data;
+        $scope.unitFlag = ($scope.search.units == 'metric' ? '°C' : '°F');
       });
     };
 

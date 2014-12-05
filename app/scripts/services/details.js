@@ -22,10 +22,10 @@ angular.module('angularWeatherApp')
           return $http.jsonp(apiUrl);
         }
       },
-      week: function(city) {
+      week: function(search) {
         debugger;
-        if (city) {
-          var apiUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&q=" + city + "&callback=JSON_CALLBACK&lang=" + "zh_cn" + "&units=" + "metric" + "&APPID=1bb8aaab54671b48242f9a892b6c0374";
+        if (search) {
+          var apiUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&q=" + search.city + "&callback=JSON_CALLBACK&lang=" + search.lang + "&units=" + search.units;
           return $http.jsonp(apiUrl);
         }
       }
