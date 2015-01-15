@@ -1,49 +1,49 @@
-<nav class="navbar navbar-default" role="navigation"  >
-  <form class="navbar-form navbar-left" role="form" novalidate>
+<nav class="navbar navbar-default" role="navigation">
+  <form name="form" class="navbar-form navbar-left" role="form" novalidate>
     <!-- <label>{{title}}</label> -->
     <label for="lang">Language</label>
-    <select ng-model="search.lang" id="lang" class="form-control" >
-      <option value="zh_cn" selected>Chinese</option>
+    <select ng-model="search.lang" id="lang" class="form-control" required>
+      <option value="zh_cn">Chinese</option>
       <option value="en_us">English</option>
     </select>
     <label for="units">Units</label>
-    <select ng-model="search.units" id="units" class="form-control" >
-      <option value="metric" selected>Metric(°C)</option>
+    <select ng-model="search.units" id="units" class="form-control" required>
+      <option value="metric">Metric(°C)</option>
       <option value="imperial">Imperial(°F)</option>
     </select>
     <label for="city">City</label>
-    <input type="text" id="city" ng-model="search.city" class="form-control" placeholder="Please input city">
-    <button class="btn btn-primary btn-sm" type="submit" ng-click="searchWeather()">
-    <span class="glyphicon glyphicon-search"></span>
-    Search
+    <input type="text" id="city" class="form-control" placeholder="Please input city"
+           ng-model="search.city_hidden" auto-city required>
+    <button class="btn btn-primary btn-sm"
+            data-loading-text="Loading..." autocomplete="off"
+            ng-disabled="form.$invalid || waiting" search-btn>
+      <span class="glyphicon glyphicon-search"></span>
+      Search
     </button>
   </form>
 </nav>
-<table class="table" ng-show="needShow()">
-  <tr>
-    <td>Country</td>
-    <td>{{weathers.city.country}}</td>
-  </tr>
-  <tr>
-    <td>City</td>
-    <td>{{weathers.city.name}}</td>
-  </tr>
-  <tr>
-    <td  ng-repeat="w in weathers.list">
-      <table class="table">
-        <tr>
-          <td>{{w.dt * 1000 | date : 'MM-dd'}}</td>
-        </tr>
-        <tr>
-          <td><img ng-src="http://openweathermap.org/img/w/{{w.weather[0].icon}}.png" ></td>
-        </tr>
-        <tr>
-          <td>{{w.weather[0].description}}</td>
-        </tr>
-        <tr>
-          <td>{{w.temp.min}} ~ {{w.temp.max}} {{unitFlag}} </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
+
+<div ng-show="notFoundError" class="alert alert-danger alert-dismissible" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign"></span>
+  <span class="sr-only">Error:</span>
+  This city is not found, please check you input...
+</div>
+
+<div ng-show="needShow()">
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+      <strong>Country:</strong> {{weathers.city.country}}
+      <strong>City:</strong> {{weathers.city.name}}
+    </div>
+
+    <!-- results list -->
+    <div class="list-group">
+      <a href="#" class="list-group-item slide-animation " ng-repeat="w in weathers.list">
+        <span class="col-sm-1.5">{{w.dt * 1000 | date : 'MM-dd'}}</span>
+        <img ng-src="http://openweathermap.org/img/w/{{w.weather[0].icon}}.png">
+        {{w.weather[0].description}}
+        <span class="label label-default">{{w.temp.min}}{{unitFlag}}</span>
+        <span class="label label-warning">{{w.temp.max}}{{unitFlag}}</span> </a>
+    </div>
+  </div>

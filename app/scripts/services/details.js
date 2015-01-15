@@ -15,17 +15,23 @@ angular.module('angularWeatherApp')
       day: function(city) {
         if (city) {
 
-          var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&callback=JSON_CALLBACK";
-
-          console.log(apiUrl);
+          var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city
+            + "&callback=JSON_CALLBACK";
 
           return $http.jsonp(apiUrl);
         }
       },
       week: function(search) {
-        debugger;
-        if (search) {
-          var apiUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&q=" + search.city + "&callback=JSON_CALLBACK&lang=" + search.lang + "&units=" + search.units;
+        if (search && search.city) {
+
+          // not reliable API when using lat & lon
+          /*// try to use lat & lng as parameters
+          if (search.lat && search.lng) {
+            location = "lat=" + search.lat + "&lon=" + search.lng;
+          }*/
+          var apiUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&q=" + search.city
+            + "&callback=JSON_CALLBACK&lang=" + search.lang
+            + "&units=" + search.units;
           return $http.jsonp(apiUrl);
         }
       }

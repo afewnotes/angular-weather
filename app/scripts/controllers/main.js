@@ -8,17 +8,19 @@
  * Controller of the angularWeatherApp
  */
 angular.module('angularWeatherApp')
-  .controller('MainCtrl', function($scope, details) {
-    // $scope.title = "Weather";
+  .controller('MainCtrl', function ($scope, details) {
+    // hide error alert by default
+    $scope.notFoundError = false;
+    // language & units default selected
+    $scope.search = {};
+    $scope.search.lang = "en_us";
+    $scope.search.units = "imperial";
 
-    $scope.searchWeather = function() {
-      details.week($scope.search).success(function(data) {
-        $scope.weathers = data;
-        $scope.unitFlag = ($scope.search.units == 'metric' ? '°C' : '°F');
-      });
+    // data found and returned
+    $scope.needShow = function () {
+      return !$scope.notFoundError
+        && $scope.weathers
+        && $scope.weathers.cod === '200';
     };
 
-    $scope.needShow = function() {
-      return $scope.weathers && $scope.weathers.cod === '200';
-    };
   });

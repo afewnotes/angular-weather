@@ -77,3 +77,12 @@ body {
     border-bottom: 0;
   }
 }
+
+/*customize css form*/
+form input.ng-invalid.ng-dirty {
+  background-color: #FA786C;
+}
+
+/*form input.ng-valid.ng-dirty {
+  background-color: #78FA89;
+}*/
