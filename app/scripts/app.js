@@ -19,10 +19,6 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/weather/:date', {
-        templateUrl: 'views/weather.html',
-        controller: 'WeatherCtrl'
-      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
