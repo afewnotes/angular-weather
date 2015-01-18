@@ -19,7 +19,7 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/weather', {
+      .when('/weather/:date', {
         templateUrl: 'views/weather.html',
         controller: 'WeatherCtrl'
       })
@@ -30,4 +30,6 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+
+    //$locationProvider.html5Mode(true);
   });

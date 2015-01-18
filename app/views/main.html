@@ -2,7 +2,8 @@
   <form name="form" class="navbar-form navbar-left" role="form" novalidate>
     <!-- <label>{{title}}</label> -->
     <label for="lang">Language</label>
-    <select ng-model="search.lang" id="lang" class="form-control" required>
+    <select id="lang" class="form-control" required
+            ng-model="search.lang" >
       <option value="zh_cn">Chinese</option>
       <option value="en_us">English</option>
     </select>
@@ -29,21 +30,30 @@
   This city is not found, please check you input...
 </div>
 
-<div ng-show="needShow()">
+<!-- week list -->
+<div ng-show="showWeek()">
   <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class="panel-heading">
-      <strong>Country:</strong> {{weathers.city.country}}
-      <strong>City:</strong> {{weathers.city.name}}
+      <span class="glyphicon glyphicon-th-list"></span>
+      <strong>{{weathers.city.name}}, {{weathers.city.country}}</strong>
     </div>
 
     <!-- results list -->
     <div class="list-group">
-      <a href="#" class="list-group-item slide-animation " ng-repeat="w in weathers.list">
+      <a href="#" ng-click="day(w.dt);$event.preventDefault(); $event.stopPropagation();"
+         class="list-group-item slide-animation "
+         ng-repeat="w in weathers.list">
         <span class="col-sm-1.5">{{w.dt * 1000 | date : 'MM-dd'}}</span>
         <img ng-src="http://openweathermap.org/img/w/{{w.weather[0].icon}}.png">
         {{w.weather[0].description}}
         <span class="label label-default">{{w.temp.min}}{{unitFlag}}</span>
-        <span class="label label-warning">{{w.temp.max}}{{unitFlag}}</span> </a>
+        <span class="label label-warning">{{w.temp.max}}{{unitFlag}}</span>
+      </a>
     </div>
   </div>
+</div>
+
+<!-- day details -->
+<div ng-show="showDay()" ng-include="'views/weather.html'">
+</div>

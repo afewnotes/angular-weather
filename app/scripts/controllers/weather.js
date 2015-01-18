@@ -8,13 +8,9 @@
  * Controller of the angularWeatherApp
  */
 angular.module('angularWeatherApp')
-  .controller('WeatherCtrl', function($scope, details) {
+  .controller('WeatherCtrl', function($scope, $route, $routeParams, details) {
 
-    $scope.detail = function() {
-      details.day($scope.city).success(function(data) {
-        $scope.weatherDetail = data;
-      });
-    }
+    $scope.detail = details($scope.search);
 
     $scope.needShow = function() {
       return weatherDetail && weatherDetail.cod === 200;
