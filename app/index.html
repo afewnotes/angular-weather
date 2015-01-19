@@ -25,9 +25,10 @@ Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve you
 <!-- Add your site or application content here -->
 <div class="container">
   <div class="header">
-    <ul class="nav nav-pills pull-right">
-      <li class="active"><a ng-href="#">Home</a></li>
-      <li><a ng-href="#/about">About</a></li>
+    <ul class="nav nav-pills pull-right"
+      ng-controller="MainCtrl">
+      <li ng-class="{active: isActive('/')}"><a ng-href="#">Home</a></li>
+      <li ng-class="{active: isActive('/about')}"><a ng-href="#/about">About</a></li>
       <li><a href="https://github.com/zhang-yuan/angular-weather">Github</a></li>
     </ul>
     <h3 class="text-muted">angularWeather</h3>
@@ -70,7 +71,6 @@ ga('send', 'pageview');
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/about.js"></script>
-<script src="scripts/controllers/weather.js"></script>
 <script src="scripts/services/details.js"></script>
 <script src="scripts/directives/searchbtn.js"></script>
 <script src="scripts/directives/autocity.js"></script>

@@ -8,16 +8,18 @@
  * Controller of the angularWeatherApp
  */
 angular.module('angularWeatherApp')
-  .controller('MainCtrl', function ($scope, details) {
+  .controller('MainCtrl', function ($scope, $location, details) {
+    // active tab
+    $scope.isActive = function(route) {
+      return route === $location.path();
+    }
+
     // hide error alert by default
     $scope.notFoundError = false;
     // language & units default selected
     $scope.search = {};
     $scope.search.lang = "en_us";
     $scope.search.units = "imperial";
-
-    // waiting status (for API)
-    $scope.waiting = true;
 
     // data results object
     $scope.weathers = {};
@@ -48,8 +50,7 @@ angular.module('angularWeatherApp')
     // nav to day page
     $scope.day = function (date) {
       //  hide list div, show day details div
-      $scope.weekFlag = false;
-      $scope.dayFlag = true;
+      $scope.toggle();
       //  find the data of the selected date in weathers
       $scope.weather = $scope.weathers.list.filter(function (item) {
         return item.dt === date;

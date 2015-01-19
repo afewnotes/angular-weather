@@ -11,6 +11,10 @@ angular.module('angularWeatherApp')
     return {
       restrict: 'A',
       link: function postLink(scope, element, attrs) {
+
+        // waiting status (for API)
+        scope.waiting = true;
+
         // listen on click event
         element.on('click', function () {
           // show loading... as button text
