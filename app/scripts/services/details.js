@@ -12,18 +12,16 @@ angular.module('angularWeatherApp')
     // not reliable API when using lat & lon
     /*// try to use lat & lng as parameters
      if (search.lat && search.lng) {
-     location = "lat=" + search.lat + "&lon=" + search.lng;
+     location = 'lat=' + search.lat + '&lon=' + search.lng;
      }*/
     // basic API url
-    var apiUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&callback=JSON_CALLBACK";
+    var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&callback=JSON_CALLBACK';
 
     // Public API here
     return function (search) {
-        if (search && search.city) {
-          apiUrl += "&q=" + search.city
-          + "&lang=" + search.lang
-          + "&units=" + search.units;
-          return $http.jsonp(apiUrl);
-        }
-      };
+      if (search && search.city) {
+        apiUrl += '&q=' + search.city + '&lang=' + search.lang + '&units=' + search.units;
+        return $http.jsonp(apiUrl);
+      }
+    };
   });

@@ -12,9 +12,9 @@ describe('Directive: searchBtn', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<search-btn></search-btn>');
+  it('should disable button', inject(function ($compile) {
+    element = angular.element('<button class="btn btn-primary btn-sm"\n        data-loading-text="Loading..." autocomplete="off"\n        ng-disabled="form.$invalid || waiting" search-btn>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the searchBtn directive');
+    expect(scope.waiting).toBe(true);
   }));
 });

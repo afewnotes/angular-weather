@@ -12,9 +12,10 @@ describe('Directive: autoCity', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<auto-city></auto-city>');
+  it('should load google object', inject(function ($compile) {
+    element = angular.element('<input type="text" auto-city placeholder="Please input city"> ');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the autoCity directive');
+    expect(element.attr('placeholder')).toBe('Please input city');
+    expect(window.google).toEqual(jasmine.any(Object));
   }));
 });

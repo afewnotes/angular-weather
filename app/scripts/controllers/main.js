@@ -8,18 +8,14 @@
  * Controller of the angularWeatherApp
  */
 angular.module('angularWeatherApp')
-  .controller('MainCtrl', function ($scope, $location, details) {
-    // active tab
-    $scope.isActive = function(route) {
-      return route === $location.path();
-    }
+  .controller('MainCtrl', function ($scope, $location) {
 
     // hide error alert by default
     $scope.notFoundError = false;
     // language & units default selected
     $scope.search = {};
-    $scope.search.lang = "en_us";
-    $scope.search.units = "imperial";
+    $scope.search.lang = 'en_us';
+    $scope.search.units = 'imperial';
 
     // data results object
     $scope.weathers = {};
@@ -28,24 +24,10 @@ angular.module('angularWeatherApp')
     $scope.weekFlag = false;
     $scope.dayFlag = false;
 
-    // expose an API to directive
-    $scope.week = function () {
-      return details($scope.search).success(function (data) {
-        $scope.notFoundError = false;
-        $scope.weathers = data;
-        $scope.unitFlag = ($scope.search.units == 'metric' ? '°C' : '°F');
-
-        //  hide day details div, show list div
-        $scope.weekFlag = true;
-        $scope.dayFlag = false;
-      }).error(function (data, status) {
-        //show error message
-        if (status === 404) {
-          $scope.notFoundError = true;
-        }
-        //  ...
-      });
-    }
+    // active tab
+    $scope.isActive = function(route) {
+      return route === $location.path();
+    };
 
     // nav to day page
     $scope.day = function (date) {
@@ -55,23 +37,21 @@ angular.module('angularWeatherApp')
       $scope.weather = $scope.weathers.list.filter(function (item) {
         return item.dt === date;
       })[0];
-
-    }
+    };
 
     // toggle week and day div
     $scope.toggle = function () {
       $scope.weekFlag = !$scope.weekFlag;
       $scope.dayFlag = !$scope.dayFlag;
-    }
+    };
 
     // week list details
     $scope.showWeek = function () {
-      return !$scope.notFoundError
-        && $scope.weekFlag;
+      return !$scope.notFoundError && $scope.weekFlag;
     };
     // show day details
     $scope.showDay = function () {
       return $scope.dayFlag;
-    }
+    };
 
   });

@@ -11,8 +11,21 @@ describe('Service: details', function () {
     details = _details_;
   }));
 
-  it('should do something', function () {
-    expect(!!details).toBe(true);
+  it('should return some data', function () {
+    var search = {
+      city: 'wuhan',
+      lang: 'en',
+      units: 'imperial'
+    };
+    var result, error;
+    details(search).success(function (data) {
+      result = data;
+    }).error(function (e) {
+      error = e;
+    }).finally(function () {
+      expect(result.city.name).toBe('Wuhan');
+    });
+
   });
 
 });

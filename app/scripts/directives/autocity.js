@@ -10,7 +10,8 @@ angular.module('angularWeatherApp')
   .directive('autoCity', function () {
     return {
       restrict: 'A',
-      link: function postLink(scope, element, attrs) {
+      link: function postLink(scope, element) {
+
         var options = {
           types: ['(cities)']
         };
