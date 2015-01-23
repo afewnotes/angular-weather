@@ -32,7 +32,7 @@
 </div>
 
 <!-- week list -->
-<div ng-show="showWeek()">
+<div id="weekDiv" ng-show="showWeek()">
   <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class="panel-heading">
@@ -56,5 +56,5 @@
 </div>
 
 <!-- day details -->
-<div ng-show="showDay()" ng-include="'views/weather.html'">
+<div id="dayDiv" ng-show="showDay()" ng-include="'views/weather.html'">
 </div>
