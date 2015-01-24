@@ -82,6 +82,12 @@ describe('angular weather ', function () {
       expect(element(by.id('weekDiv')).isDisplayed()).toBe(false);
       expect(element(by.id('dayDiv')).isDisplayed()).toBe(true);
 
+      // back to week div
+      element(by.className('glyphicon-circle-arrow-left')).click();
+
+      expect(element(by.id('weekDiv')).isDisplayed()).toBe(true);
+      expect(element(by.id('dayDiv')).isDisplayed()).toBe(false);
+
       // input an unexist city name , can't click searchBtn
       cityEle.clear();
       cityEle.sendKeys('~!@#$%');
@@ -93,5 +99,10 @@ describe('angular weather ', function () {
 
       expect(items.isDisplayed()).toBe(false);
     });
+  });
+
+  it('should nav to about tab', function() {
+    element.all(by.css('ul.nav li')).get(1).click();
+    expect(element(by.className('active')).getText()).toEqual('About');
   });
 });
