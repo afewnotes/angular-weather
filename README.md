@@ -3,12 +3,14 @@ angular-weather
 
 an angular app to get the weather.
 
-1. start
-> npm install
-> bower install
-> grunt serve
+1.start
+```
+npm install
+bower install
+grunt serve
+```
 
-2. simple features
+2.simple features
 
 - language options
 - unit options
@@ -17,7 +19,7 @@ an angular app to get the weather.
 - forecast 7 days weather of selected city
 - weather details of one certain day
 
-3. resources
+>resources
 
 - Start with [yoman](https://github.com/yeoman/yo) angular generator.
 - Free weather API : [OpenWeatherMap](http://openweathermap.org/api ).
