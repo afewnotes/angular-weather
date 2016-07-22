@@ -1,3 +1,7 @@
+###TODO
+- update API
+- update angular version……
+
 angular-weather
 ===============
 
