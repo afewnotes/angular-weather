@@ -15,7 +15,7 @@ angular.module('angularWeatherApp')
      location = 'lat=' + search.lat + '&lon=' + search.lng;
      }*/
     // basic API url
-    var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&callback=JSON_CALLBACK';
+    var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&callback=JSON_CALLBACK&APPID=b9ff3b3708c8ca1d2c46009a94cf428d';
 
     // Public API here
     return function (search) {
