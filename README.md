@@ -2,7 +2,7 @@
 - update API
 - update angular version……
 
-angular-weather
+angular-weather ![](https://travis-ci.org/zhang-yuan/angular-weather.svg?branch=master)
 ===============
 
 an angular app to get the weather.

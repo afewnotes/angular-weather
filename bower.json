@@ -1,17 +1,17 @@
 {
   "name": "angular-weather",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "dependencies": {
-    "angular": "~1.2.0",
-    "json3": "~3.3.1",
-    "es5-shim": "~3.1.0",
-    "bootstrap": "~3.2.0",
-    "angular-animate": "~1.2.0",
-    "angular-route": "~1.2.0"
+    "angular": "latest",
+    "json3": "latest",
+    "es5-shim": "latest",
+    "bootstrap": "latest",
+    "angular-animate": "latest",
+    "angular-route": "latest"
   },
   "devDependencies": {
-    "angular-mocks": "~1.2.0",
-    "angular-scenario": "~1.2.0"
+    "angular-mocks": "latest",
+    "angular-scenario": "latest"
   },
   "appPath": "app"
 }
