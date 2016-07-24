@@ -24,6 +24,7 @@
     "grunt-svgmin": "latest",
     "grunt-usemin": "latest",
     "grunt-wiredep": "latest",
+    "jasmine-core": "latest",
     "jshint-stylish": "latest",
     "karma": "latest",
     "karma-jasmine": "latest",
