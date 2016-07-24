@@ -1,11 +1,8 @@
-###TODO
-- update API
-- update angular version……
 
 angular-weather ![](https://travis-ci.org/zhang-yuan/angular-weather.svg?branch=master)
 ===============
 
-an angular app to get the weather.
+an angular app to display weather.
 
 1.start
 ```
@@ -25,6 +22,6 @@ grunt serve
 
 >resources
 
-- Start with [yoman](https://github.com/yeoman/yo) angular generator.
+- [yoman](https://github.com/yeoman/yo) angular generator.
 - Free weather API : [OpenWeatherMap](http://openweathermap.org/api ).
 - Location API: [Google Maps JavaScript API v3](https://developers.google.com/maps/)
