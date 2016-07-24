@@ -16,12 +16,20 @@ angular.module('angularWeatherApp')
      }*/
     // basic API url
     var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&callback=JSON_CALLBACK&APPID=b9ff3b3708c8ca1d2c46009a94cf428d';
+    var params = {};
 
     // Public API here
     return function (search) {
+      var url = apiUrl;
       if (search && search.city) {
-        apiUrl += '&q=' + search.city + '&lang=' + search.lang + '&units=' + search.units;
-        return $http.jsonp(apiUrl);
+        params.q = search.city;
+        params.lang = search.lang;
+        params.units = search.units;
+
+        $.each(params, function(i, o) {
+          url += '&' + i + '=' + o;
+        });
+        return $http.jsonp(url);
       }
     };
   });
