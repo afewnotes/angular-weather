@@ -29,10 +29,11 @@
     "karma-jasmine": "latest",
     "karma-phantomjs-launcher": "latest",
     "load-grunt-tasks": "latest",
+    "serve-static": "latest",
     "time-grunt": "latest"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": "latest"
   },
   "scripts": {
     "test": "grunt test"
