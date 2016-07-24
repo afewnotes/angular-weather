@@ -23,7 +23,7 @@
     "grunt-ng-annotate": "latest",
     "grunt-svgmin": "latest",
     "grunt-usemin": "latest",
-    "grunt-wiredep": "latest",
+    "grunt-wiredep": "^3.0.1",
     "jasmine-core": "latest",
     "jshint-stylish": "latest",
     "karma": "latest",
