@@ -1,11 +1,8 @@
-###TODO
-- update API
-- update angular version……
 
 angular-weather ![](https://travis-ci.org/zhang-yuan/angular-weather.svg?branch=master)
 ===============
 
-an angular app to get the weather.
+an angular app to display weather.
 
 1.start
 ```
