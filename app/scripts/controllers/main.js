@@ -8,7 +8,7 @@
  * Controller of the angularWeatherApp
  */
 angular.module('angularWeatherApp')
-  .controller('MainCtrl', function ($scope, $location) {
+  .controller('MainCtrl', function ($scope, $location, $translate) {
 
     // hide error alert by default
     $scope.notFoundError = false;
@@ -53,5 +53,9 @@ angular.module('angularWeatherApp')
     $scope.showDay = function () {
       return $scope.dayFlag;
     };
+
+    $scope.changeLanguage = function () {
+      $translate.use($scope.search.lang);
+    }
 
   });

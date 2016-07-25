@@ -1,20 +1,20 @@
 <nav class="navbar navbar-default" role="navigation">
   <form name="form" class="navbar-form navbar-left" role="form" novalidate>
     <!-- <label>{{title}}</label> -->
-    <label for="lang">Language</label>
-    <select id="lang" class="form-control" required
+    <label for="lang">{{'Language' | translate }}</label>
+    <select id="lang" class="form-control" required ng-change="changeLanguage()"
             ng-model="search.lang">
-      <option value="zh_cn">Chinese</option>
-      <option value="en_us">English</option>
+      <option value="zh_cn">{{'Chinese' | translate }}</option>
+      <option value="en_us">{{'English' | translate }}</option>
     </select>
-    <label for="units">Units</label>
+    <label for="units">{{'Units' | translate }}</label>
     <select id="units" class="form-control" required
             ng-model="search.units" >
-      <option value="metric">Metric(°C)</option>
-      <option value="imperial">Imperial(°F)</option>
+      <option value="metric">{{'Metric' | translate}}(°C)</option>
+      <option value="imperial">{{'Imperial' | translate}}(°F)</option>
     </select>
-    <label for="city">City</label>
-    <input type="text" id="city" class="form-control" placeholder="Please input city"
+    <label for="city">{{'City' | translate}}</label>
+    <input type="text" id="city" class="form-control" placeholder="{{'Please_input_city' | translate}}"
            ng-model="search.city_hidden" auto-city required>
     <button class="btn btn-primary btn-sm"
             data-loading-text="Loading..." autocomplete="off"

@@ -25,6 +25,7 @@ grunt serve
 
 >resources
 
-- Start with [yoman](https://github.com/yeoman/yo) angular generator.
+- [yoman](https://github.com/yeoman/yo) angular generator.
+- [angular-translate](https://github.com/angular-translate/angular-translate)
 - Free weather API : [OpenWeatherMap](http://openweathermap.org/api ).
 - Location API: [Google Maps JavaScript API v3](https://developers.google.com/maps/)
