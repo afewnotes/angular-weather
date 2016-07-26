@@ -4,7 +4,7 @@ node_js:
 before_script:
   - 'npm install -g bower grunt-cli'
   - 'npm install'
-  - 'bower instll'
+  - 'bower install'
 script:  
   - 'grunt build --force'
 after_script:
