@@ -27,11 +27,11 @@ Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve you
   <div class="header">
     <ul class="nav nav-pills pull-right"
       ng-controller="MainCtrl">
-      <li ng-class="{active: isActive('/')}"><a ng-href="#">Home</a></li>
-      <li ng-class="{active: isActive('/about')}"><a ng-href="#/about">About</a></li>
+      <li ng-class="{active: isActive('/')}"><a ng-href="#/">{{'Home' | translate}}</a></li>
+      <li ng-class="{active: isActive('/about')}"><a ng-href="#/about">{{'About' | translate }}</a></li>
       <li><a href="https://github.com/zhang-yuan/angular-weather">Github</a></li>
     </ul>
-    <h3 class="text-muted">angularWeather</h3>
+    <h3 class="text-muted"><a ng-href="#/">angularWeather</a></h3>
   </div>
   <div ng-view="" id="ng-view" class="slide-animation"></div>
   <div class="footer">

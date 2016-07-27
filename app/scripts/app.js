@@ -4,25 +4,35 @@
  * language resources
  */
 var translationEN = {
+  Home: "Home",
+  About: "About",
   Language: "Language",
   English: "English",
   Chinese: "Chinese",
+  Search: "Search",
   Units: "Units",
   Metric: "Metric",
   Imperial: "Imperial",
   City: "City",
-  Please_input_city: "Please input city"
+  Please_input_city: "Please input city",
+  Error: "Error",
+  City_not_found: "This city is not found, please check you input..."
 };
 
 var translationZH = {
+  Home: "首页",
+  About: "关于",
   Language: "语言",
   English: "英文",
   Chinese: "中文",
+  Search: "搜索",
   Units: "单位",
   Metric: "摄氏",
   Imperial: "华氏",
   City: "城市",
-  Please_input_city: "请输入名称"
+  Please_input_city: "请输入名称",
+  Error: "错误",
+  City_not_found: "未找到该城市，请重新输入……"
 };
 
 /**

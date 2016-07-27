@@ -20,15 +20,15 @@
             data-loading-text="Loading..." autocomplete="off"
             ng-disabled="form.$invalid || waiting" search-btn>
       <span class="glyphicon glyphicon-search"></span>
-      Search
+      {{'Search' | translate}}
     </button>
   </form>
 </nav>
 
 <div ng-show="notFoundError" class="alert alert-danger alert-dismissible" role="alert">
   <span class="glyphicon glyphicon-exclamation-sign"></span>
-  <span class="sr-only">Error:</span>
-  This city is not found, please check you input...
+  <span class="sr-only">{{ 'Error' | translate }}:</span>
+  {{'City_not_found' | translate}}
 </div>
 
 <!-- week list -->
