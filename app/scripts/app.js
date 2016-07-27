@@ -16,7 +16,13 @@ var translationEN = {
   City: "City",
   Please_input_city: "Please input city",
   Error: "Error",
-  City_not_found: "This city is not found, please check you input..."
+  City_not_found: "This city is not found, please check you input...",
+  Wind: "Wind",
+  Pressure: "Pressure",
+  Humidity: "Humidity",
+  Day: "Day",
+  Eve: "Evening",
+  Night: "Night"
 };
 
 var translationZH = {
@@ -32,7 +38,13 @@ var translationZH = {
   City: "城市",
   Please_input_city: "请输入名称",
   Error: "错误",
-  City_not_found: "未找到该城市，请重新输入……"
+  City_not_found: "未找到该城市，请重新输入……",
+  Wind: "风速",
+  Pressure: "压力",
+  Humidity: "湿度",
+  Day: "白天",
+  Eve: "傍晚",
+  Night: "夜间"
 };
 
 /**

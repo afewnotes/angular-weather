@@ -12,10 +12,10 @@
         <span class="label label-default">{{weather.temp.min}}{{unitFlag}}</span>
         <span class="label label-warning">{{weather.temp.max}}{{unitFlag}}</span>
       </li>
-      <li class="list-group-item">Wind: {{weather.speed}}m/s {{weather.deg}}°</li>
-      <li class="list-group-item">Pressure: {{weather.pressure}}hpa</li>
-      <li class="list-group-item">Humidity: {{weather.humidity}}%</li>
-      <li class="list-group-item">Day: {{weather.temp.day}}{{unitFlag}} Eve: {{weather.temp.eve}}{{unitFlag}} Night:
+      <li class="list-group-item">{{ 'Wind' | translate }}: {{weather.speed}}m/s {{weather.deg}}°</li>
+      <li class="list-group-item">{{ 'Pressure' | translate }}: {{weather.pressure}}hpa</li>
+      <li class="list-group-item">{{ 'Humidity' | translate }}: {{weather.humidity}}%</li>
+      <li class="list-group-item">{{ 'Day' | translate }}: {{weather.temp.day}}{{unitFlag}} {{ 'Eve' | translate }}: {{weather.temp.eve}}{{unitFlag}} {{ 'Night' | translate }}:
         {{weather.temp.night}}{{unitFlag}}
       </li>
     </ul>
