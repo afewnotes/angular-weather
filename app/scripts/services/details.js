@@ -21,8 +21,8 @@ angular.module('angularWeatherApp')
     // Public API here
     return function (search) {
       var url = apiUrl;
-      if (search && search.city) {
-        params.q = search.city;
+      if (search && search.zipcode) {
+        params.zip = search.zipcode + ',CN';
         params.lang = search.lang;
         params.units = search.units;
 

@@ -14,11 +14,8 @@
             <option value="imperial">{{'Imperial' | translate}}(°F)</option>
         </select>
         <label for="city">{{'City' | translate}}</label>
-        <!--<input type="text" id="city" class="form-control" placeholder="{{'Please_input_city' | translate}}"-->
-        <!--ng-model="search.city_hidden" auto-city required>-->
-        <input type="text" id="suggestId" size="20" value="" style="width:150px;" ng-model="search.city_hidden"
-               auto-city required placeholder="{{'Please_input_city' | translate}}"/>
-        <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
+        <input type="text" id="city" class="form-control" placeholder="{{'Please_input_city' | translate}}"
+               ng-model="search.city_hidden" auto-city required>
         <button class="btn btn-primary btn-sm"
                 data-loading-text="Loading..." autocomplete="off"
                 ng-disabled="form.$invalid || waiting" search-btn>
