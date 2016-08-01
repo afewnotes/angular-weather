@@ -4,14 +4,14 @@ angular-weather ![](https://travis-ci.org/zhang-yuan/angular-weather.svg?branch=
 
 天气示例
 
-1. 运行
+1.运行
 ```
 npm install
 bower install
 grunt serve
 ```
 
-2. 基础功能
+2.基础功能
 
 - 语言切换
 - 单位切换
