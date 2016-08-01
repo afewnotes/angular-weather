@@ -2,25 +2,24 @@
 angular-weather ![](https://travis-ci.org/zhang-yuan/angular-weather.svg?branch=master)
 ===============
 
-an angular app to display weather.
+天气示例
 
-1.start
+1. 运行
 ```
 npm install
 bower install
 grunt serve
 ```
 
-2.simple features
+2. 基础功能
 
-- language options
-- unit options
-- city name auto-completion
-- dynamic enable/disable search button
-- forecast 7 days weather of selected city
-- weather details of one certain day
+- 语言切换
+- 单位切换
+- 城市名称自动提示
+- 7 天预报
+- 天气详情
 
->resources
+> 使用资源
 
 - [yoman](https://github.com/yeoman/yo) angular generator.
 - [angular-translate](https://github.com/angular-translate/angular-translate)
