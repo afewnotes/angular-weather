@@ -20,11 +20,15 @@ angular.module('angularWeatherApp')
           };
           var autocomplete= new AMap.Autocomplete(autoOptions);
           AMap.event.addListener(autocomplete, "select", function(e){
-          scopeSup.search.zipcode = e.poi.adcode;
-
-          scopeSup.waiting = false;
-          scopeSup.$apply();
-          //   debugger;
+            var geocoder = new AMap.Geocoder();
+            //地理编码,返回地理编码结果
+            geocoder.getLocation(e.poi.district, function(status, result) {
+              if (status === 'complete' && result.info === 'OK') {
+                scope.search.location = result.geocodes[0].location;
+                scopeSup.waiting = false;
+                scopeSup.$apply();
+              }
+            });
           });
         });
 
