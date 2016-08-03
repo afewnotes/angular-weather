@@ -25,3 +25,4 @@ grunt serve
 - [angular-translate](https://github.com/angular-translate/angular-translate)
 - Free weather API : [OpenWeatherMap](http://openweathermap.org/api ).
 - Location API: [高德地图 JavaScript API](http://lbs.amap.com/api/javascript-api/summary/)
+- 汉字转拼音：[JSPinyin](https://github.com/chinalu/JSPinyin)
