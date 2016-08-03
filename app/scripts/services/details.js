@@ -21,9 +21,8 @@ angular.module('angularWeatherApp')
     // Public API here
     return function (search) {
       var url = apiUrl;
-      if (search && search.location) {
-        params.lat = search.location.lat;
-        params.lng = search.location.lng;
+      if (search && search.city) {
+        params.q = search.city.replace('Shi', '');
         params.lang = search.lang;
         params.units = search.units;
 
